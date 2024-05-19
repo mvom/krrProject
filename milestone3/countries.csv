@@ -1,0 +1,100 @@
+id,name,continent_id
+1,Germany,1
+2,Spain,1
+3,France,1
+4,Brazil,5
+5,Argentina,5
+6,United States,3
+7,Cameroon,4
+8,Congo,4
+9,Japan,2
+10,China,2
+11,United States of America,3
+12,Canada,3
+13,Ivory Coast,4
+14,Italy,1
+15,Belgium,1
+16,North Corea,2
+17,Fidji,6
+18,Australia,6
+19,New Zealand,6
+20,Russia,1
+21,United Kingdom,1
+22,Portugal,1
+23,India,2
+24,South Korea,2
+25,South Africa,4
+26,Nigeria,4
+27,Mexico,3
+28,Cuba,3
+29,Chile,5
+30,Peru,5
+31,Indonesia,2
+32,Philippines,2
+33,Egypt,4
+34,Morocco,4
+35,Papua New Guinea,6
+36,Tonga,6
+37,Norway,1
+38,Sweden,1
+39,Finland,1
+40,Iran,2
+41,Turkey,2
+42,Kenya,4
+43,Ethiopia,4
+44,Canada,3
+45,Mexico,3
+46,Colombia,5
+47,Ecuador,5
+48,New Guinea,6
+49,Solomon Islands,6
+50,Guinea,4
+51,Madagascar,4
+52,Guatemala,3
+53,Costa Rica,3
+54,Bolivia,5
+55,Paraguay,5
+56,New Caledonia,6
+57,Samoa,6
+58,Ireland,1
+59,Denmark,1
+60,Netherlands,1
+61,Vietnam,2
+62,Thailand,2
+63,Angola,4
+64,Zimbabwe,4
+65,United States,3
+66,Nicaragua,3
+67,Venezuela,5
+68,Guyana,5
+69,Fiji,6
+70,Vanuatu,6
+71,Sierra Leone,4
+72,Mali,4
+73,El Salvador,3
+74,Honduras,3
+75,Uruguay,5
+76,Suriname,5
+77,Papua New Guinea,6
+78,Kiribati,6
+79,Norway,1
+80,Sweden,1
+81,Finland,1
+82,Pakistan,2
+83,Bangladesh,2
+84,Ghana,4
+85,Mozambique,4
+86,Mexico,3
+87,Panama,3
+88,Bolivia,5
+89,Guyana,5
+90,Solomon Islands,6
+91,Tonga,6
+92,Liberia,4
+93,Tanzania,4
+94,Costa Rica,3
+95,Guatemala,3
+96,Paraguay,5
+97,Ecuador,5
+98,Australia,6
+99,New Zealand,6

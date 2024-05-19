@@ -1,0 +1,81 @@
+id,team_id,name,city_id
+1,1,Stade de France,3
+2,2,Wembley Stadium,6
+3,3,San Siro,14
+4,4,Old Trafford,2
+5,5,Anfield,2
+6,6,Signal Iduna Park,1
+7,7,Emirates Stadium,6
+8,8,Etihad Stadium,6
+9,9,Camp Nou,2
+10,10,Stamford Bridge,6
+11,11,Estadio Monumental,5
+12,12,Estadio do Dragao,3
+13,13,Estadio da Luz,3
+14,14,Estadio Ramon Sanchez Pizjuan,2
+15,15,Juventus Stadium,14
+16,16,Olympiastadion,1
+17,17,Stadio San Paolo,14
+18,18,Volksparkstadion,1
+19,19,Stadio Olimpico,14
+20,20,King Power Stadium,6
+21,21,St. James Park,58
+22,22,Villa Park,59
+23,23,Molineux Stadium,60
+24,24,Elland Road,61
+25,25,King Power Stadium,62
+26,26,Bramall Lane,63
+27,27,Turf Moor,64
+28,28,Stadium of Light,65
+29,29,Riverside Stadium,66
+30,30,Liberty Stadium,67
+31,31,Selhurst Park,68
+32,32,Brentford Community Stadium,69
+33,33,Stadium MK,70
+34,34,Cardiff City Stadium,71
+35,35,Ashton Gate Stadium,72
+36,36,City Ground,73
+37,37,Adams Park,74
+38,38,DW Stadium,75
+39,39,The Valley,76
+40,40,KCOM Stadium,77
+41,41,Carrow Road,58
+42,42,Emirates Stadium,59
+43,43,Old Trafford,60
+44,44,Anfield,61
+45,45,Etihad Stadium,62
+46,46,Vicarage Road,63
+47,47,London Stadium,64
+48,48,Vitality Stadium,65
+49,49,Brisbane Road,66
+50,50,Craven Cottage,67
+51,51,Madejski Stadium,68
+52,52,Stadium of Light,69
+53,53,Vale Park,70
+54,54,Valley Parade,71
+55,55,Stadium:MK,72
+56,56,The New Den,73
+57,57,Bloomfield Road,74
+58,58,Kenilworth Road,75
+59,59,St Andrew,76
+60,60,Stadium MK,77
+61,61,Stamford Bridge,3
+62,62,Old Trafford,11
+63,63,Anfield,12
+64,64,Emirates Stadium,15
+65,65,Etihad Stadium,16
+66,66,Goodison Park,12
+67,67,Tottenham Hotspur Stadium,3
+68,68,Kingston Communications Stadium,77
+69,69,Madejski Stadium,18
+70,70,Britannia Stadium,60
+71,71,John Smith,57
+72,72,Ricoh Arena,26
+73,73,Carrow Road,20
+74,74,Vitality Stadium,17
+75,75,Portman Road,22
+76,76,Loftus Road,3
+77,77,St Andrew,59
+78,78,Riverside Stadium,66
+79,79,KCOM Stadium,77
+80,80,Bramall Lane,63
