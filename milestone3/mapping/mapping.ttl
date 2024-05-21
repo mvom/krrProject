@@ -1,0 +1,648 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix foot: <http://www.example.org/foot-infos/ont#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<#PlayerIdentityMap>
+    rr:logicalTable [ rr:tableName "PLAYERS" ];
+    rr:subjectMap [
+        rr:template "playerIdentity#{ID}" ;
+        rr:class foot:Player;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerFirstName, rdfs:label ;
+        rr:objectMap [ rr:column "FIRST_NAME" ; rr:datatype xsd:string] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerLastName, rdfs:label ;
+        rr:objectMap [ rr:column "LAST_NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerGenre, rdfs:label ;
+        rr:objectMap [ rr:column "IS_MALE" ; rr:datatype xsd:boolean ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:playerDateOfBirth ;
+        rr:objectMap [ rr:column "BIRTHDAY" ; rr:datatype xsd:date ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerComesFrom;
+        rr:objectMap [
+            rr:parentTriplesMap <#OriginCountryMap>;
+            rr:joinCondition [
+                rr:child "COUNTRY_ID"; rr:parent "ID";
+            ];
+        ];
+    ];
+     rr:predicateObjectMap [
+        rr:predicate foot:playerIsBornIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#LocationMap>;
+            rr:joinCondition [
+                rr:child "PLACE_OF_BIRTH"; rr:parent "ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:playsFor;
+        rr:objectMap [
+            rr:parentTriplesMap <#TeamMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:isCoachedBy;
+        rr:objectMap [
+            rr:parentTriplesMap <#ManagerIdentityMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "TEAM_ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playsAtHome;
+        rr:objectMap [
+            rr:parentTriplesMap <#SportFacilityMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "TEAM_ID";
+            ];
+        ];
+    ] .
+
+
+<#RefereeIdentityMap>
+    rr:logicalTable [ rr:tableName "REFEREES" ];
+    rr:subjectMap [
+        rr:template "refereeIdentity#{ID}" ;
+        rr:class foot:Referee;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeFirstName ;
+        rr:objectMap [ rr:column "FIRST_NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeLastName ;
+        rr:objectMap [ rr:column "LAST_NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeDateOfBirth ;
+        rr:objectMap [ rr:column "BIRTHDAY" ; rr:datatype xsd:date ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeGenre ;
+        rr:objectMap [ rr:column "IS_MALE" ; rr:datatype xsd:boolean ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeComesFrom;
+        rr:objectMap [
+            rr:parentTriplesMap <#OriginCountryMap>;
+            rr:joinCondition [
+                rr:child "COUNTRY_ID"; rr:parent "ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeIsBornIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#LocationMap>;
+            rr:joinCondition [
+                rr:child "PLACE_OF_BIRTH"; rr:parent "ID";
+            ];
+        ];
+    ] .
+
+
+<#ManagerIdentityMap>
+    rr:logicalTable [ rr:tableName "MANAGERS" ];
+    rr:subjectMap [
+        rr:template "managerIdentity#{ID}" ;
+        rr:class foot:Manager;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerFirstName ;
+        rr:objectMap [ rr:column "FIRST_NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerLastName ;
+        rr:objectMap [ rr:column "LAST_NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerGenre ;
+        rr:objectMap [ rr:column "IS_MALE" ; rr:datatype xsd:boolean ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerDateOfBirth ;
+        rr:objectMap [ rr:column "BIRTHDAY" ; rr:datatype xsd:date ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerComesFrom;
+        rr:objectMap [
+            rr:parentTriplesMap <#OriginCountryMap>;
+            rr:joinCondition [
+                rr:child "COUNTRY_ID"; rr:parent "ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:manages;
+        rr:objectMap [
+            rr:parentTriplesMap <#TeamMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerIsBorn;
+        rr:objectMap [
+            rr:parentTriplesMap <#LocationMap>;
+            rr:joinCondition [
+                rr:child "PLACE_OF_BIRTH"; rr:parent "ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:coaches;
+        rr:objectMap [
+            rr:parentTriplesMap <#PlayerIdentityMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "TEAM_ID";
+            ];
+        ];
+    ] .
+
+
+<#OriginCountryMap>
+    rr:logicalTable [ rr:tableName "COUNTRIES" ];
+    rr:subjectMap [
+        rr:template "country#{ID}" ;
+        rr:class foot:Country ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:countryName, rdfs:label ;
+        rr:objectMap [ rr:column "NAME" ; rr:datatype xsd:string ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:isIncludedIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#QualificationZoneMap>;
+            rr:joinCondition [
+                rr:child "CONTINENT_ID"; rr:parent "ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:countryConsistsOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#LocationMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "COUNTRY_ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:playerNativeCountry;
+        rr:objectMap [
+            rr:parentTriplesMap <#PlayerIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "COUNTRY_ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:managerNativeCountry;
+        rr:objectMap [
+            rr:parentTriplesMap <#ManagerIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "COUNTRY_ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeNativeCountry;
+        rr:objectMap [
+            rr:parentTriplesMap <#RefereeIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "COUNTRY_ID";
+            ];
+        ];
+    ].
+
+
+<#LocationMap>
+    rr:logicalTable [ rr:tableName "CITIES" ];
+    rr:subjectMap [
+        rr:template "city#{ID}" ;
+        rr:class foot:City;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:cityName , rdfs:label ;
+        rr:objectMap [ rr:column "NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:townOf;
+        rr:objectMap [
+            rr:parentTriplesMap <#OriginCountryMap>;
+            rr:joinCondition [
+                rr:child "COUNTRY_ID"; rr:parent "ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:holds;
+        rr:objectMap [
+            rr:parentTriplesMap <#SportFacilityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "CITY_ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerPlaceOfBirth;
+        rr:objectMap [
+            rr:parentTriplesMap <#PlayerIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "PLACE_OF_BIRTH";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:managerPlaceOfBirth;
+        rr:objectMap [
+            rr:parentTriplesMap <#ManagerIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "PLACE_OF_BIRTH";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:refereePlaceOfBirth;
+        rr:objectMap [
+            rr:parentTriplesMap <#RefereeIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "PLACE_OF_BIRTH";
+            ];
+        ];
+    ].
+
+
+<#SportFacilityMap>
+    rr:logicalTable [ rr:tableName "STADIUMS" ];
+    rr:subjectMap [
+        rr:template "stadium#{ID}" ;
+        rr:class foot:Stadium;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:stadiumName, rdfs:label ;
+        rr:objectMap [ rr:column "NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:isLocated;
+        rr:objectMap [
+            rr:parentTriplesMap <#LocationMap>;
+            rr:joinCondition [
+                rr:child "CITY_ID"; rr:parent "ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:belongsToTeam;
+        rr:objectMap [
+            rr:parentTriplesMap <#TeamMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "ID";
+            ];
+        ];
+    ] .
+
+
+<#TeamMap>
+    rr:logicalTable [ rr:tableName "TEAMS" ];
+    rr:subjectMap [
+        rr:template "team#{ID}" ;
+        rr:class foot:Team;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:teamName, rdfs:label ;
+        rr:objectMap [ rr:column "NAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:teamGenre ;
+        rr:objectMap [ rr:column "IS_MALE"; rr:datatype xsd:boolean ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:teamIsLocated;
+        rr:objectMap [
+            rr:parentTriplesMap <#LocationMap>;
+            rr:joinCondition [
+                rr:child "CITY_ID"; rr:parent "ID";
+            ];
+        ];
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerEmployer;
+        rr:objectMap [
+            rr:parentTriplesMap <#PlayerIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "TEAM_ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:managerEmployer;
+        rr:objectMap [
+            rr:parentTriplesMap <#ManagerIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "TEAM_ID";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:isManagedBy;
+        rr:objectMap [
+            rr:parentTriplesMap <#ManagerIdentityMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "TEAM_ID";
+            ];
+        ];
+    ].
+
+
+<#QualificationZoneMap>
+    rr:logicalTable [ rr:tableName "CONTINENTS" ];
+    rr:subjectMap [
+        rr:template "qualificationZone#{ID}" ;
+        rr:class foot:QualificationZone;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:qualificationZoneName, rdfs:label ;
+        rr:objectMap [ rr:column "NAME" ; rr:datatype xsd:string ] ;
+  ];
+     rr:predicateObjectMap [
+        rr:predicate foot:isMadeUp;
+        rr:objectMap [
+            rr:parentTriplesMap <#OriginCountryMap>;
+            rr:joinCondition [
+                rr:child "ID"; rr:parent "CONTINENT_ID";
+            ];
+        ];
+  ].
+
+
+ <#PlayerPenaltiesMap>
+    rr:logicalTable [ rr:tableName "PLAYER_STATISTICS" ];
+    rr:subjectMap [
+        rr:template "playerPanalties#{ID}" ;
+        rr:class foot:PlayerPenalties;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerPenaltyDate, rdfs:label ;
+        rr:objectMap [ rr:column "STATISTICS_DATE" ; rr:datatype xsd:string ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:playerYellowCardNumber, rdfs:label ;
+        rr:objectMap [ rr:column "YELLOW_CARDS" ; rr:datatype xsd:integer] ;
+    ];
+     rr:predicateObjectMap [
+        rr:predicate foot:playerRedCardNumber, rdfs:label ;
+        rr:objectMap [ rr:column "RED_CARDS" ; rr:datatype xsd:integer ] ;
+    ];
+     rr:predicateObjectMap [
+        rr:predicate foot:playerRedCardNumber, rdfs:label ;
+        rr:objectMap [ rr:column "POSITION" ; rr:datatype xsd:string ] ;
+   ];
+    rr:predicateObjectMap [
+        rr:predicate foot:achievedByPlayer;
+        rr:objectMap [
+            rr:parentTriplesMap <#PlayerIdentityMap>;
+            rr:joinCondition [
+                rr:child "PLAYER_ID"; rr:parent "ID";
+            ];
+        ];
+    ] .
+
+
+<#TeamPenaltiesMap>
+    rr:logicalTable [ rr:tableName "TEAM_STATISTICS" ];
+    rr:subjectMap [
+        rr:template "teamPanalties#{ID}" ;
+        rr:class foot:PlayerPenalties;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:teamPenaltyDate, rdfs:label ;
+        rr:objectMap [ rr:column "STATISTICS_DATE" ; rr:datatype xsd:date ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:teamRedCardNumber ;
+        rr:objectMap [ rr:column "NUMBER_OF_RED_CARDS" ; rr:datatype xsd:integer ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:teamYellowCardNumber ;
+        rr:objectMap [ rr:column "NUMBER_OF_YELLOW_CARDS" ; rr:datatype xsd:integer ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:achievedByTeam;
+        rr:objectMap [
+            rr:parentTriplesMap <#TeamMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "ID";
+            ];
+        ];
+    ] .
+
+
+ <#PlayerFairPlayIndexMap>
+    rr:logicalTable [ rr:tableName "PLAYER_STATISTICS" ];
+    rr:subjectMap [
+        rr:template "playerFairPlayIndex#{ID}" ;
+        rr:class foot:PlayerPenalties;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerFairPlayDate, rdfs:label ;
+        rr:objectMap [ rr:column "STATISTICS_DATE" ; rr:datatype xsd:date ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:goals, rdfs:label ;
+        rr:objectMap [ rr:column "GOALS" ; rr:datatype xsd:integer ] ;
+    ];
+     rr:predicateObjectMap [
+        rr:predicate foot:assists, rdfs:label ;
+        rr:objectMap [ rr:column "ASSISTS" ; rr:datatype xsd:integer ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:gottenBy;
+        rr:objectMap [
+            rr:parentTriplesMap <#PlayerIdentityMap>;
+            rr:joinCondition [
+                rr:child "PLAYER_ID"; rr:parent "ID";
+            ];
+        ];
+    ] .
+
+
+<#TeamFairPlayIndexMap>
+    rr:logicalTable [ rr:tableName "TEAM_STATISTICS" ];
+    rr:subjectMap [
+        rr:template "teamFairPlayIndex#{ID}" ;
+        rr:class foot:PlayerPenalties;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:teamFairPlayerDate, rdfs:label ;
+        rr:objectMap [ rr:column "STATISTICS_DATE" ; rr:datatype xsd:date ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:goalsFor, rdfs:label ;
+        rr:objectMap [ rr:column "GOALS_FOR" ; rr:datatype xsd:integer ] ;
+    ];
+     rr:predicateObjectMap [
+        rr:predicate foot:goalsAgainst, rdfs:label ;
+        rr:objectMap [ rr:column "GOALS_AGAINST" ; rr:datatype xsd:integer ] ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:obtainedBy;
+        rr:objectMap [
+            rr:parentTriplesMap <#TeamMap>;
+            rr:joinCondition [
+                rr:child "TEAM_ID"; rr:parent "ID";
+            ];
+        ];
+    ] .
+
+
+
+<#PlayerContinentView>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT players.id, players.first_name as fName, players.last_name as lName, continents.name AS continent_name
+            FROM players
+            LEFT OUTER JOIN countries ON players.country_id = countries.id
+            LEFT OUTER JOIN continents ON countries.continent_id = continents.id
+        """;
+    ];
+    rr:subjectMap [
+        rr:template "playerIdentity#{ID}" ;
+        rr:class foot:PlayerIdentity;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerFirstName, rdfs:label ;
+        rr:objectMap [ rr:column "FNAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerLastName, rdfs:label ;
+        rr:objectMap [ rr:column "LNAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:playerAttendsIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#QualificationZoneMap>;
+            rr:joinCondition [
+                rr:child "CONTINENT_NAME"; rr:parent "NAME";
+            ];
+        ];
+    ].
+
+
+<#RefereeContinentView>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT referees.id, referees.first_name as fName, referees.last_name as lName, continents.name AS continent_name
+            FROM referees
+            LEFT OUTER JOIN countries ON referees.country_id = countries.id
+            LEFT OUTER JOIN continents ON countries.continent_id = continents.id
+        """;
+    ];
+    rr:subjectMap [
+        rr:template "refereeIdentity#{ID}" ;
+        rr:class foot:RefereeIdentity;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeFirstName, rdfs:label ;
+        rr:objectMap [ rr:column "FNAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeLastName, rdfs:label ;
+        rr:objectMap [ rr:column "LNAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:refereeAttendsIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#QualificationZoneMap>;
+            rr:joinCondition [
+                rr:child "CONTINENT_NAME"; rr:parent "NAME";
+            ];
+        ];
+    ].
+
+
+<#ManagerContinentView>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT managers.id, managers.first_name as fName, managers.last_name as lName, continents.name AS continent_name
+            FROM managers
+            LEFT OUTER JOIN countries ON managers.country_id = countries.id
+            LEFT OUTER JOIN continents ON countries.continent_id = continents.id
+        """;
+    ];
+    rr:subjectMap [
+        rr:template "managerIdentity#{ID}" ;
+        rr:class foot:ManagerIdentity;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerFirstName, rdfs:label ;
+        rr:objectMap [ rr:column "FNAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerLastName, rdfs:label ;
+        rr:objectMap [ rr:column "LNAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:managerAttendsIn;
+        rr:objectMap [
+            rr:parentTriplesMap <#QualificationZoneMap>;
+            rr:joinCondition [
+                rr:child "CONTINENT_NAME"; rr:parent "NAME";
+            ];
+        ];
+    ].
+
+
+
+<#TeamCountryView>
+    rr:logicalTable [
+        rr:sqlQuery """
+            SELECT teams.id, teams.name AS tname, countries.name AS country_name, continents.name AS continent_name
+            FROM teams
+            LEFT OUTER JOIN cities ON teams.city_id = cities.id
+            LEFT OUTER JOIN countries ON cities.country_id = countries.id
+            LEFT OUTER JOIN continents ON countries.continent_id = continents.id
+        """;
+    ];
+    rr:subjectMap [
+        rr:template "teams#{ID}" ;
+        rr:class foot:Team;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:teamName, rdfs:label ;
+        rr:objectMap [ rr:column "TNAME"; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate foot:teamCountry;
+        rr:objectMap [
+            rr:parentTriplesMap <#OriginCountryMap>;
+            rr:joinCondition [
+                rr:child "COUNTRY_NAME"; rr:parent "NAME";
+            ];
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate foot:teamQualificationZone;
+        rr:objectMap [
+            rr:parentTriplesMap <#QualificationZoneMap>;
+            rr:joinCondition [
+                rr:child "CONTINENT_NAME"; rr:parent "NAME";
+            ];
+        ];
+    ].

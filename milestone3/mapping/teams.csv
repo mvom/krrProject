@@ -1,0 +1,404 @@
+id,name,is_male,city_id
+1,Oslo Vikings,1,79
+2,Stockholm Stars,1,80
+3,Helsinki Huskies,1,81
+4,Tehran Tigers,1,40
+5,Istanbul Eagles,1,41
+6,Nairobi Lions,1,42
+7,Addis Ababa Alligators,1,43
+8,Toronto Titans,1,44
+9,Mexico City Mavericks,1,45
+10,Bogotá Bears,1,46
+11,Quito Quails,1,47
+12,Port Moresby Penguins,1,48
+13,Honiara Hawks,1,49
+14,Conakry Cobras,1,50
+15,Antananarivo Tigers,1,51
+16,Guatemala City Griffins,1,52
+17,San José Sharks,1,53
+18,La Paz Lions,1,54
+19,Asunción Aviators,1,55
+20,Nouméa Nomads,1,56
+21,Apia Angels,1,57
+22,Dublin Dragons,1,58
+23,Copenhagen Crusaders,1,59
+24,Amsterdam Archers,1,60
+25,Hanoi Hornets,1,61
+26,Bangkok Buccaneers,1,62
+27,Luanda Leopards,1,63
+28,Harare Hawks,1,64
+29,New York Knights,1,65
+30,Managua Marlins,1,66
+31,Caracas Cougars,1,67
+32,Georgetown Gladiators,1,68
+33,Suva Stingrays,1,69
+34,Port Vila Panthers,1,70
+35,Freetown Falcons,1,71
+36,Bamako Bulldogs,1,72
+37,San Salvador Scorpions,1,73
+38,Tegucigalpa Tigers,1,74
+39,Montevideo Mavericks,1,75
+40,Paramaribo Panthers,1,76
+41,Port Moresby Pelicans,1,77
+42,South Tarawa Seahawks,1,78
+43,Oslo Vikings,1,79
+44,Stockholm Strikers,1,80
+45,Helsinki Heroes,1,81
+46,Islamabad Irons,1,82
+47,Dhaka Dragons,1,83
+48,Accra Admirals,1,84
+49,Maputo Marauders,1,85
+50,Mexico City Mavericks,1,86
+51,Panama Pirates,1,87
+52,La Paz Lions,1,88
+53,Georgetown Gladiators,1,89
+54,Honiara Hawks,1,90
+55,Nukuʻalofa Titans,1,91
+56,Monrovia Mavericks,1,92
+57,Dodoma Defenders,1,93
+58,San José Sharks,1,94
+59,Guatemala City Griffins,1,95
+60,Asunción Avengers,1,96
+61,Quito Quicksilvers,1,97
+62,Sydney Sharks,1,98
+63,Wellington Warriors,1,99
+64,Oslo Vikings,0,79
+65,Stockholm Strikers,0,80
+66,Helsinki Heroes,0,81
+67,Islamabad Irons,0,82
+68,Dhaka Dragons,0,83
+69,Accra Admirals,0,84
+70,Maputo Marauders,0,85
+71,Mexico City Mavericks,0,86
+72,Panama Pirates,0,87
+73,La Paz Lions,0,88
+74,Georgetown Gladiators,0,89
+75,Honiara Hawks,0,90
+76,Nukuʻalofa Titans,0,91
+77,Monrovia Mavericks,0,92
+78,Dodoma Defenders,0,93
+79,San José Sharks,0,94
+80,Guatemala City Griffins,0,95
+81,Asunción Avengers,0,96
+82,Quito Quicksilvers,0,97
+83,Sydney Sharks,0,98
+84,Wellington Warriors,0,99
+85,Berlin Lionesses,0,1
+86,Madrid Mermaids,0,2
+87,Paris Pearls,0,3
+88,Rio Lionesses,0,4
+89,Buenos Aires Butterflies,0,5
+90,New York Nymphs,0,6
+91,Yaoundé Yaks,0,7
+92,Brazzaville Babes,0,8
+93,Tokyo Tigresses,0,9
+94,Beijing Belles,0,10
+95,Washington Wonders,0,11
+96,Ottawa Owlettes,0,12
+97,Abidjan Amazons,0,13
+98,Rome Lionesses,0,14
+99,Brussels Buttercups,0,15
+100,Pyongyang Princesses,0,16
+101,Suva Sirens,0,17
+102,Canberra Cheetahs,0,18
+103,Wellington Wildcats,0,19
+104,Germany National,1,
+105,Germany National,0,
+106,Spain National,1,
+107,Spain National,0,
+108,France National,1,
+109,France National,0,
+110,Brazil National,1,
+111,Brazil National,0,
+112,Argentina National,1,
+113,Argentina National,0,
+114,United States National,1,
+115,United States National,0,
+116,Cameroon National,1,
+117,Cameroon National,0,
+118,China National,1,
+119,China National,0,
+120,Canada National,1,
+121,Canada National,0,
+122,Italy National,1,
+123,Italy National,0,
+124,Norway National,1,
+125,Norway National,0,
+126,Sweden National,1,
+127,Sweden National,0,
+128,Finland National,1,
+129,Finland National,0,
+130,Iran National,1,
+131,Iran National,0,
+132,Turkey National,1,
+133,Turkey National,0,
+134,Kenya National,1,
+135,Kenya National,0,
+136,Ethiopia National,1,
+137,Ethiopia National,0,
+138,Canada National,1,
+139,Canada National,0,
+140,Mexico National,1,
+141,Mexico National,0,
+142,Colombia National,1,
+143,Colombia National,0,
+144,Ecuador National,1,
+145,Ecuador National,0,
+146,New Guinea National,1,
+147,New Guinea National,0,
+148,Solomon Islands National,1,
+149,Solomon Islands National,0,
+150,Guinea National,1,
+151,Guinea National,0,
+152,Madagascar National,1,
+153,Madagascar National,0,
+154,Guatemala National,1,
+155,Guatemala National,0,
+156,Costa Rica National,1,
+157,Costa Rica National,0,
+158,Paraguay National,1,
+159,Paraguay National,0,
+160,Australia National,1,
+161,Australia National,0,
+162,New Zealand National,1,
+163,New Zealand National,0,
+164,Paris Saint-Germain,1,3
+165,Olympique de Marseille,1,14
+166,Olympique Lyonnais,1,3
+167,AS Monaco,1,14
+168,Lille OSC,1,3
+169,Stade Rennais,1,15
+170,AS Saint-Étienne,1,3
+171,Girondins de Bordeaux,1,3
+172,OGC Nice,1,3
+173,FC Nantes,1,3
+174,Montpellier HSC,1,3
+175,RC Lens,1,3
+176,Angers SCO,1,3
+177,FC Lorient,1,3
+178,FC Metz,1,3
+179,RC Strasbourg,1,3
+180,Stade Brestois,1,3
+181,Stade de Reims,1,3
+182,FC Lille,1,3
+183,FC Sochaux-Montbéliard,1,3
+184,Paris Saint-Germain Women,0,3
+185,Olympique de Marseille Women,0,14
+186,Olympique Lyonnais Women,0,3
+187,AS Monaco Women,0,14
+188,Lille OSC Women,0,3
+189,Stade Rennais Women,0,15
+190,AS Saint-Étienne Women,0,3
+191,Girondins de Bordeaux Women,0,3
+192,OGC Nice Women,0,3
+193,FC Nantes Women,0,3
+194,Montpellier HSC Women,0,3
+195,RC Lens Women,0,3
+196,Angers SCO Women,0,3
+197,FC Lorient Women,0,3
+198,FC Metz Women,0,3
+199,RC Strasbourg Women,0,3
+200,Stade Brestois Women,0,3
+201,Stade de Reims Women,0,3
+202,FC Lille Women,0,3
+203,FC Sochaux-Montbéliard Women,0,3
+204,Manchester City,1,7
+205,Liverpool FC,1,8
+206,Chelsea FC,1,9
+207,Manchester United,1,7
+208,Leicester City,1,10
+209,West Ham United,1,9
+210,Tottenham Hotspur,1,9
+211,Arsenal FC,1,9
+212,Aston Villa,1,11
+213,Everton FC,1,8
+214,Leeds United,1,12
+215,Southampton FC,1,13
+216,Crystal Palace,1,9
+217,Wolverhampton Wanderers,1,14
+218,Newcastle United,1,15
+219,Brighton & Hove Albion,1,16
+220,Burnley FC,1,17
+221,Fulham FC,1,9
+222,West Bromwich Albion,1,18
+223,Sheffield United,1,19
+224,Manchester City Women,0,7
+225,Liverpool FC Women,0,8
+226,Chelsea FC Women,0,9
+227,Manchester United Women,0,7
+228,Leicester City Women,0,10
+229,West Ham United Women,0,9
+230,Tottenham Hotspur Women,0,9
+231,Arsenal FC Women,0,9
+232,Aston Villa Women,0,11
+233,Everton FC Women,0,8
+234,Leeds United Women,0,12
+235,Southampton FC Women,0,13
+236,Crystal Palace Women,0,9
+237,Wolverhampton Wanderers Women,0,14
+238,Newcastle United Women,0,15
+239,Brighton & Hove Albion Women,0,16
+240,Burnley FC Women,0,17
+241,Fulham FC Women,0,9
+242,West Bromwich Albion Women,0,18
+243,Sheffield United Women,0,19
+244,FC Bayern München,1,20
+245,Borussia Dortmund,1,21
+246,RB Leipzig,1,22
+247,Borussia Mönchengladbach,1,23
+248,Bayer 04 Leverkusen,1,24
+249,VfL Wolfsburg,1,25
+250,Eintracht Frankfurt,1,26
+251,SV Werder Bremen,1,27
+252,TSG 1899 Hoffenheim,1,28
+253,1. FC Köln,1,29
+254,FC Augsburg,1,30
+255,Hertha BSC,1,31
+256,1. FSV Mainz 05,1,32
+257,FC Schalke 04,1,33
+258,SC Freiburg,1,34
+259,1. FC Union Berlin,1,31
+260,Arminia Bielefeld,1,35
+261,VfB Stuttgart,1,36
+262,FC Augsburg,1,30
+263,VfL Bochum,1,37
+264,FC Bayern München Frauen,0,20
+265,Borussia Dortmund Frauen,0,21
+266,RB Leipzig Frauen,0,22
+267,Borussia Mönchengladbach Frauen,0,23
+268,Bayer 04 Leverkusen Frauen,0,24
+269,VfL Wolfsburg Frauen,0,25
+270,Eintracht Frankfurt Frauen,0,26
+271,SV Werder Bremen Frauen,0,27
+272,TSG 1899 Hoffenheim Frauen,0,28
+273,1. FC Köln Frauen,0,29
+274,FC Augsburg Frauen,0,30
+275,Hertha BSC Frauen,0,31
+276,1. FSV Mainz 05 Frauen,0,32
+277,FC Schalke 04 Frauen,0,33
+278,SC Freiburg Frauen,0,34
+279,1. FC Union Berlin Frauen,0,31
+280,Arminia Bielefeld Frauen,0,35
+281,VfB Stuttgart Frauen,0,36
+282,FC Augsburg Frauen,0,30
+283,VfL Bochum Frauen,0,37
+284,Real Madrid,1,3
+285,FC Barcelona,1,4
+286,Atlético Madrid,1,3
+287,Sevilla FC,1,5
+288,Real Sociedad,1,6
+289,Villarreal CF,1,7
+290,Real Betis,1,8
+291,Athletic Bilbao,1,9
+292,Valencia CF,1,10
+293,Granada CF,1,11
+294,Levante UD,1,12
+295,Cádiz CF,1,13
+296,SD Eibar,1,14
+297,Deportivo Alavés,1,15
+298,Getafe CF,1,16
+299,SD Huesca,1,17
+300,Real Valladolid,1,18
+301,Elche CF,1,19
+302,CA Osasuna,1,20
+303,Celta Vigo,1,21
+304,Real Madrid Femenino,0,3
+305,FC Barcelona Femení,0,4
+306,Atlético Madrid Femenino,0,3
+307,Sevilla FC Femenino,0,5
+308,Real Sociedad Femenino,0,6
+309,Villarreal CF Femenino,0,7
+310,Real Betis Femenino,0,8
+311,Athletic Bilbao Femenino,0,9
+312,Valencia CF Femenino,0,10
+313,Granada CF Femenino,0,11
+314,Levante UD Femenino,0,12
+315,Cádiz CF Femenino,0,13
+316,SD Eibar Femenino,0,14
+317,Deportivo Alavés Femenino,0,15
+318,Getafe CF Femenino,0,16
+319,SD Huesca Femenino,0,17
+320,Real Valladolid Femenino,0,18
+321,Elche CF Femenino,0,19
+322,CA Osasuna Femenino,0,20
+323,Celta Vigo Femenino,0,21
+324,FC Bayern München,1,20
+325,Borussia Dortmund,1,21
+326,RB Leipzig,1,22
+327,Borussia Mönchengladbach,1,23
+328,Bayer 04 Leverkusen,1,24
+329,VfL Wolfsburg,1,25
+330,Eintracht Frankfurt,1,26
+331,SV Werder Bremen,1,27
+332,TSG 1899 Hoffenheim,1,28
+333,1. FC Köln,1,29
+334,FC Augsburg,1,30
+335,Hertha BSC,1,31
+336,1. FSV Mainz 05,1,32
+337,FC Schalke 04,1,33
+338,SC Freiburg,1,34
+339,1. FC Union Berlin,1,31
+340,Arminia Bielefeld,1,35
+341,VfB Stuttgart,1,36
+342,FC Augsburg,1,30
+343,VfL Bochum,1,37
+344,FC Bayern München Frauen,0,20
+345,Borussia Dortmund Frauen,0,21
+346,RB Leipzig Frauen,0,22
+347,Borussia Mönchengladbach Frauen,0,23
+348,Bayer 04 Leverkusen Frauen,0,24
+349,VfL Wolfsburg Frauen,0,25
+350,Eintracht Frankfurt Frauen,0,26
+351,SV Werder Bremen Frauen,0,27
+352,TSG 1899 Hoffenheim Frauen,0,28
+353,1. FC Köln Frauen,0,29
+354,FC Augsburg Frauen,0,30
+355,Hertha BSC Frauen,0,31
+356,1. FSV Mainz 05 Frauen,0,32
+357,FC Schalke 04 Frauen,0,33
+358,SC Freiburg Frauen,0,34
+359,1. FC Union Berlin Frauen,0,31
+360,Arminia Bielefeld Frauen,0,35
+361,VfB Stuttgart Frauen,0,36
+362,FC Augsburg Frauen,0,30
+363,VfL Bochum Frauen,0,37
+364,Real Madrid,1,3
+365,FC Barcelona,1,4
+366,Atlético Madrid,1,3
+367,Sevilla FC,1,5
+368,Real Sociedad,1,6
+369,Villarreal CF,1,7
+370,Real Betis,1,8
+371,Athletic Bilbao,1,9
+372,Valencia CF,1,10
+373,Granada CF,1,11
+374,Levante UD,1,12
+375,Cádiz CF,1,13
+376,SD Eibar,1,14
+377,Deportivo Alavés,1,15
+378,Getafe CF,1,16
+379,SD Huesca,1,17
+380,Real Valladolid,1,18
+381,Elche CF,1,19
+382,CA Osasuna,1,20
+383,Celta Vigo,1,21
+384,Real Madrid Femenino,0,3
+385,FC Barcelona Femení,0,4
+386,Atlético Madrid Femenino,0,3
+387,Sevilla FC Femenino,0,5
+388,Real Sociedad Femenino,0,6
+389,Villarreal CF Femenino,0,7
+390,Real Betis Femenino,0,8
+391,Athletic Bilbao Femenino,0,9
+392,Valencia CF Femenino,0,10
+393,Granada CF Femenino,0,11
+394,Levante UD Femenino,0,12
+395,Cádiz CF Femenino,0,13
+396,SD Eibar Femenino,0,14
+397,Deportivo Alavés Femenino,0,15
+398,Getafe CF Femenino,0,16
+399,SD Huesca Femenino,0,17
+400,Real Valladolid Femenino,0,18
+401,Elche CF Femenino,0,19
+402,CA Osasuna Femenino,0,20
+403,Celta Vigo Femenino,0,21
