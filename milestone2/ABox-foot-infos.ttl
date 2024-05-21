@@ -13,6 +13,16 @@
 #    Individuals
 #################################################################
 
+###  http://www.example.org/foot-infos/resources#Dembele
+:Dembele rdf:type owl:NamedIndividual ,
+                  <http://www.example.org/foot-infos/ont#PlayerIdentity> ;
+         <http://www.example.org/foot-infos/ont#playerIsBornIn> :Paris ;
+         <http://www.example.org/foot-infos/ont#playsFor> :PSG ;
+         <http://www.example.org/foot-infos/ont#playerFirstName> "Dembele" ;
+         <http://www.example.org/foot-infos/ont#playerGenre> "true"^^xsd:boolean ;
+         rdfs:label "Dembele" .
+
+
 ###  http://www.example.org/foot-infos/resources#Euro
 :Euro rdf:type owl:NamedIndividual ,
                <http://www.example.org/foot-infos/ont#QualificationZone> ;
@@ -34,10 +44,9 @@
          <http://www.example.org/foot-infos/ont#managerComesFrom> :France ;
          <http://www.example.org/foot-infos/ont#managerIsBorn> :Paris ;
          <http://www.example.org/foot-infos/ont#manages> :PSG ;
-         <http://www.example.org/foot-infos/ont#managerDateOfBirth> "01-01-1970"^^rdfs:Literal ;
-         <http://www.example.org/foot-infos/ont#managerFirstName> "Roberto"^^rdfs:Literal ;
-         <http://www.example.org/foot-infos/ont#managerGenre> "1"^^rdfs:Literal ;
-         <http://www.example.org/foot-infos/ont#managerLastName> "Mancini"^^rdfs:Literal ;
+         <http://www.example.org/foot-infos/ont#managerDateOfBirth> "01-01-1970"^^xsd:date ;
+         <http://www.example.org/foot-infos/ont#managerFirstName> "Roberto" ;
+         <http://www.example.org/foot-infos/ont#managerLastName> "Mancini" ;
          rdfs:label "Mancini" .
 
 
@@ -47,11 +56,9 @@
         <http://www.example.org/foot-infos/ont#playerComesFrom> :France ;
         <http://www.example.org/foot-infos/ont#playerIsBornIn> :Paris ;
         <http://www.example.org/foot-infos/ont#playsFor> :PSG ;
-        <http://www.example.org/foot-infos/ont#playerDateOfBirth> "01-01-2000"^^rdfs:Literal ;
+        <http://www.example.org/foot-infos/ont#playerDateOfBirth> "2000-04-02"^^xsd:date ;
         <http://www.example.org/foot-infos/ont#playerFirstName> "Kylian" ;
-        <http://www.example.org/foot-infos/ont#playerGenre> 1 ;
-        <http://www.example.org/foot-infos/ont#playerLastName> "Mbappe"^^rdfs:Literal ;
-        <http://www.example.org/foot-infos/ont#position> "Winger" ;
+        <http://www.example.org/foot-infos/ont#playerLastName> "Mbappe" ;
         rdfs:label "Mbappe" .
 
 
@@ -59,9 +66,9 @@
 :MbappeIndex rdf:type owl:NamedIndividual ,
                       <http://www.example.org/foot-infos/ont#PlayerFairPlayIndex> ;
              <http://www.example.org/foot-infos/ont#gottenBy> :Mbappe ;
-             <http://www.example.org/foot-infos/ont#assists> "2"^^rdfs:Literal ;
-             <http://www.example.org/foot-infos/ont#goals> "3"^^rdfs:Literal ;
-             <http://www.example.org/foot-infos/ont#playerFairPlayerDate> "01-01-2020"^^rdfs:Literal ;
+             <http://www.example.org/foot-infos/ont#assists> 0 ;
+             <http://www.example.org/foot-infos/ont#goals> 2 ;
+             <http://www.example.org/foot-infos/ont#playerFairPlayerDate> "2020-08-03"^^xsd:date ;
              rdfs:label "MbappeIndex" .
 
 
@@ -69,9 +76,9 @@
 :MbappePenalties rdf:type owl:NamedIndividual ,
                           <http://www.example.org/foot-infos/ont#PlayerPenalties> ;
                  <http://www.example.org/foot-infos/ont#achievedByPlayer> :Mbappe ;
-                 <http://www.example.org/foot-infos/ont#playerPenaltyDate> "01-01-2020"^^rdfs:Literal ;
-                 <http://www.example.org/foot-infos/ont#playerRedCardNumber> "0"^^rdfs:Literal ;
-                 <http://www.example.org/foot-infos/ont#playerYellowCardNumber> "1"^^rdfs:Literal ;
+                 <http://www.example.org/foot-infos/ont#playerPenaltyDate> "2022-05-12"^^xsd:date ;
+                 <http://www.example.org/foot-infos/ont#playerRedCardNumber> 0 ;
+                 <http://www.example.org/foot-infos/ont#playerYellowCardNumber> 1 ;
                  rdfs:label "MbappePenalties" .
 
 
@@ -79,8 +86,7 @@
 :PSG rdf:type owl:NamedIndividual ,
               <http://www.example.org/foot-infos/ont#Team> ;
      <http://www.example.org/foot-infos/ont#teamIsLocated> :Paris ;
-     <http://www.example.org/foot-infos/ont#teamGenre> "1"^^rdfs:Literal ;
-     <http://www.example.org/foot-infos/ont#teamName> "PSG"^^rdfs:Literal ;
+     <http://www.example.org/foot-infos/ont#teamName> "PSG" ;
      rdfs:label "PSG" .
 
 
@@ -88,9 +94,9 @@
 :PSGIndex rdf:type owl:NamedIndividual ,
                    <http://www.example.org/foot-infos/ont#TeamFairPlayIndex> ;
           <http://www.example.org/foot-infos/ont#obtainedBy> :PSG ;
-          <http://www.example.org/foot-infos/ont#goalsAgainst> "4"^^rdfs:Literal ;
-          <http://www.example.org/foot-infos/ont#goalsFor> "2"^^rdfs:Literal ;
-          <http://www.example.org/foot-infos/ont#teamFairPlayerDate> "01-01-2020"^^rdfs:Literal ;
+          <http://www.example.org/foot-infos/ont#goalsAgainst> 3 ;
+          <http://www.example.org/foot-infos/ont#goalsFor> 1 ;
+          <http://www.example.org/foot-infos/ont#teamFairPlayerDate> "2020-03-02"^^xsd:date ;
           rdfs:label "PSGIndex" .
 
 
@@ -98,9 +104,9 @@
 :PSGPenalties rdf:type owl:NamedIndividual ,
                        <http://www.example.org/foot-infos/ont#TeamPenalties> ;
               <http://www.example.org/foot-infos/ont#achievedByTeam> :PSG ;
-              <http://www.example.org/foot-infos/ont#teamPenaltyDate> "01-01-2020"^^rdfs:Literal ;
+              <http://www.example.org/foot-infos/ont#teamPenaltyDate> "2022-03-24"^^xsd:date ;
               <http://www.example.org/foot-infos/ont#teamRedCardNumber> 3 ;
-              <http://www.example.org/foot-infos/ont#teamYellowCardNumber> "4"^^rdfs:Literal ;
+              <http://www.example.org/foot-infos/ont#teamYellowCardNumber> 2 ;
               rdfs:label "PSGPenalties" .
 
 
@@ -108,7 +114,7 @@
 :ParcDesPrinces rdf:type owl:NamedIndividual ,
                          <http://www.example.org/foot-infos/ont#SportsFacility> ;
                 <http://www.example.org/foot-infos/ont#isLocated> :Paris ;
-                <http://www.example.org/foot-infos/ont#stadiumName> "Parc Des Princes"^^rdfs:Literal ;
+                <http://www.example.org/foot-infos/ont#stadiumName> "Parc Des Princes" ;
                 rdfs:label "ParcDesPrinces" .
 
 
@@ -116,7 +122,7 @@
 :Paris rdf:type owl:NamedIndividual ,
                 <http://www.example.org/foot-infos/ont#Location> ;
        <http://www.example.org/foot-infos/ont#townOf> :France ;
-       <http://www.example.org/foot-infos/ont#cityName> "Paris"^^rdfs:Literal ;
+       <http://www.example.org/foot-infos/ont#cityName> "Paris" ;
        rdfs:label "Paris" .
 
 
@@ -125,11 +131,18 @@
                <http://www.example.org/foot-infos/ont#RefereeIdentity> ;
       <http://www.example.org/foot-infos/ont#refereeComesFrom> :France ;
       <http://www.example.org/foot-infos/ont#refereeIsBornIn> :Paris ;
-      <http://www.example.org/foot-infos/ont#refereeDateOfBirth> "01-01-1970"^^rdfs:Literal ;
-      <http://www.example.org/foot-infos/ont#refereeFirstName> "Paul"^^rdfs:Literal ;
-      <http://www.example.org/foot-infos/ont#refereeGenre> "1"^^rdfs:Literal ;
-      <http://www.example.org/foot-infos/ont#refereeLastName> "Rolan"^^rdfs:Literal ;
+      <http://www.example.org/foot-infos/ont#refereeDateOfBirth> "1998-02-13"^^xsd:date ;
+      <http://www.example.org/foot-infos/ont#refereeFirstName> "Paul" ;
+      <http://www.example.org/foot-infos/ont#refereeLastName> "Jean" ;
       rdfs:label "Paul" .
+
+
+###  http://www.example.org/foot-infos/resources#Pochettino
+:Pochettino rdf:type owl:NamedIndividual ,
+                     <http://www.example.org/foot-infos/ont#ManagerIdentity> ;
+            <http://www.example.org/foot-infos/ont#manages> :PSG ;
+            <http://www.example.org/foot-infos/ont#managerLastName> "Pochettino" ;
+            rdfs:label "Pochettino" .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

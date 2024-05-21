@@ -21,6 +21,14 @@ swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -101,6 +109,21 @@ foot:gottenBy rdf:type owl:ObjectProperty ,
               rdfs:domain foot:PlayerFairPlayIndex ;
               rdfs:range foot:PlayerIdentity ;
               rdfs:label "gottenBy" .
+
+
+###  http://www.example.org/foot-infos/ont#hasManagedSameTeam
+foot:hasManagedSameTeam rdf:type owl:ObjectProperty ,
+                                 owl:IrreflexiveProperty ;
+                        rdfs:domain foot:ManagerIdentity ;
+                        rdfs:range foot:ManagerIdentity ;
+                        rdfs:label "hasManagedSameTeam" .
+
+
+###  http://www.example.org/foot-infos/ont#hasPlayedForSameTeam
+foot:hasPlayedForSameTeam rdf:type owl:ObjectProperty ;
+                          rdfs:domain foot:PlayerIdentity ;
+                          rdfs:range foot:PlayerIdentity ;
+                          rdfs:label "hasPlayedForSameTeam" .
 
 
 ###  http://www.example.org/foot-infos/ont#holds
@@ -371,7 +394,7 @@ foot:townOf rdf:type owl:ObjectProperty ,
 ###  http://www.example.org/foot-infos/ont#assists
 foot:assists rdf:type owl:DatatypeProperty ;
              rdfs:domain foot:PlayerFairPlayIndex ;
-             rdfs:range rdfs:Literal ;
+             rdfs:range xsd:integer ;
              rdfs:label "assists" .
 
 
@@ -379,7 +402,7 @@ foot:assists rdf:type owl:DatatypeProperty ;
 foot:cityName rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain foot:Location ;
-              rdfs:range rdfs:Literal ;
+              rdfs:range xsd:string ;
               rdfs:label "cityName" .
 
 
@@ -387,28 +410,28 @@ foot:cityName rdf:type owl:DatatypeProperty ,
 foot:countryName rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain foot:OriginCountry ;
-                 rdfs:range rdfs:Literal ;
+                 rdfs:range xsd:string ;
                  rdfs:label "countryName" .
 
 
 ###  http://www.example.org/foot-infos/ont#goals
 foot:goals rdf:type owl:DatatypeProperty ;
            rdfs:domain foot:PlayerFairPlayIndex ;
-           rdfs:range rdfs:Literal ;
+           rdfs:range xsd:integer ;
            rdfs:label "goals" .
 
 
 ###  http://www.example.org/foot-infos/ont#goalsAgainst
 foot:goalsAgainst rdf:type owl:DatatypeProperty ;
                   rdfs:domain foot:TeamFairPlayIndex ;
-                  rdfs:range rdfs:Literal ;
+                  rdfs:range xsd:integer ;
                   rdfs:label "goalsAgainst" .
 
 
 ###  http://www.example.org/foot-infos/ont#goalsFor
 foot:goalsFor rdf:type owl:DatatypeProperty ;
               rdfs:domain foot:TeamFairPlayIndex ;
-              rdfs:range rdfs:Literal ;
+              rdfs:range xsd:integer ;
               rdfs:label "goalsFor" .
 
 
@@ -416,14 +439,14 @@ foot:goalsFor rdf:type owl:DatatypeProperty ;
 foot:managerDateOfBirth rdf:type owl:DatatypeProperty ,
                                  owl:FunctionalProperty ;
                         rdfs:domain foot:ManagerIdentity ;
-                        rdfs:range rdfs:Literal ;
+                        rdfs:range xsd:date ;
                         rdfs:label "managerDateOfBirth" .
 
 
 ###  http://www.example.org/foot-infos/ont#managerFirstName
 foot:managerFirstName rdf:type owl:DatatypeProperty ;
                       rdfs:domain foot:ManagerIdentity ;
-                      rdfs:range rdfs:Literal ;
+                      rdfs:range xsd:string ;
                       rdfs:label "managerFirstName" .
 
 
@@ -431,14 +454,14 @@ foot:managerFirstName rdf:type owl:DatatypeProperty ;
 foot:managerGenre rdf:type owl:DatatypeProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain foot:ManagerIdentity ;
-                  rdfs:range rdfs:Literal ;
+                  rdfs:range xsd:boolean ;
                   rdfs:label "managerGenre" .
 
 
 ###  http://www.example.org/foot-infos/ont#managerLastName
 foot:managerLastName rdf:type owl:DatatypeProperty ;
                      rdfs:domain foot:ManagerIdentity ;
-                     rdfs:range rdfs:Literal ;
+                     rdfs:range xsd:string ;
                      rdfs:label "managerLastName" .
 
 
@@ -446,14 +469,14 @@ foot:managerLastName rdf:type owl:DatatypeProperty ;
 foot:playerDateOfBirth rdf:type owl:DatatypeProperty ,
                                 owl:FunctionalProperty ;
                        rdfs:domain foot:PlayerIdentity ;
-                       rdfs:range rdfs:Literal ;
+                       rdfs:range xsd:date ;
                        rdfs:label "playerDateOfBirth" .
 
 
 ###  http://www.example.org/foot-infos/ont#playerFairPlayerDate
 foot:playerFairPlayerDate rdf:type owl:DatatypeProperty ;
                           rdfs:domain foot:PlayerFairPlayIndex ;
-                          rdfs:range rdfs:Literal ;
+                          rdfs:range xsd:date ;
                           rdfs:label "playerFairPlayerDate" .
 
 
@@ -461,7 +484,7 @@ foot:playerFairPlayerDate rdf:type owl:DatatypeProperty ;
 foot:playerFirstName rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain foot:PlayerIdentity ;
-                     rdfs:range rdfs:Literal ;
+                     rdfs:range xsd:string ;
                      rdfs:comment "playerFirstName" .
 
 
@@ -469,7 +492,7 @@ foot:playerFirstName rdf:type owl:DatatypeProperty ,
 foot:playerGenre rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain foot:PlayerIdentity ;
-                 rdfs:range rdfs:Literal ;
+                 rdfs:range xsd:boolean ;
                  rdfs:label "playerGenre" .
 
 
@@ -477,35 +500,35 @@ foot:playerGenre rdf:type owl:DatatypeProperty ,
 foot:playerLastName rdf:type owl:DatatypeProperty ,
                              owl:FunctionalProperty ;
                     rdfs:domain foot:PlayerIdentity ;
-                    rdfs:range rdfs:Literal ;
+                    rdfs:range xsd:string ;
                     rdfs:label "playerLastName" .
 
 
 ###  http://www.example.org/foot-infos/ont#playerPenaltyDate
 foot:playerPenaltyDate rdf:type owl:DatatypeProperty ;
                        rdfs:domain foot:PlayerPenalties ;
-                       rdfs:range rdfs:Literal ;
+                       rdfs:range xsd:date ;
                        rdfs:label "playerPenaltyDate" .
 
 
 ###  http://www.example.org/foot-infos/ont#playerRedCardNumber
 foot:playerRedCardNumber rdf:type owl:DatatypeProperty ;
                          rdfs:domain foot:PlayerPenalties ;
-                         rdfs:range rdfs:Literal ;
+                         rdfs:range xsd:integer ;
                          rdfs:label "playerRedCardNumber" .
 
 
 ###  http://www.example.org/foot-infos/ont#playerYellowCardNumber
 foot:playerYellowCardNumber rdf:type owl:DatatypeProperty ;
                             rdfs:domain foot:PlayerPenalties ;
-                            rdfs:range rdfs:Literal ;
+                            rdfs:range xsd:integer ;
                             rdfs:label "playerYellowCardNumber" .
 
 
 ###  http://www.example.org/foot-infos/ont#position
 foot:position rdf:type owl:DatatypeProperty ;
               rdfs:domain foot:PlayerIdentity ;
-              rdfs:range rdfs:Literal ;
+              rdfs:range xsd:string ;
               rdfs:label "position" .
 
 
@@ -513,7 +536,7 @@ foot:position rdf:type owl:DatatypeProperty ;
 foot:qualificationZoneName rdf:type owl:DatatypeProperty ,
                                     owl:FunctionalProperty ;
                            rdfs:domain foot:QualificationZone ;
-                           rdfs:range rdfs:Literal ;
+                           rdfs:range xsd:string ;
                            rdfs:label "qualificationZoneName" .
 
 
@@ -521,14 +544,14 @@ foot:qualificationZoneName rdf:type owl:DatatypeProperty ,
 foot:refereeDateOfBirth rdf:type owl:DatatypeProperty ,
                                  owl:FunctionalProperty ;
                         rdfs:domain foot:RefereeIdentity ;
-                        rdfs:range rdfs:Literal ;
+                        rdfs:range xsd:date ;
                         rdfs:label "refereeDateOfBirth" .
 
 
 ###  http://www.example.org/foot-infos/ont#refereeFirstName
 foot:refereeFirstName rdf:type owl:DatatypeProperty ;
                       rdfs:domain foot:RefereeIdentity ;
-                      rdfs:range rdfs:Literal ;
+                      rdfs:range xsd:string ;
                       rdfs:label "refereeFirstName" .
 
 
@@ -536,7 +559,7 @@ foot:refereeFirstName rdf:type owl:DatatypeProperty ;
 foot:refereeGenre rdf:type owl:DatatypeProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain foot:RefereeIdentity ;
-                  rdfs:range rdfs:Literal ;
+                  rdfs:range xsd:boolean ;
                   rdfs:label "refereeGenre" .
 
 
@@ -544,7 +567,7 @@ foot:refereeGenre rdf:type owl:DatatypeProperty ,
 foot:refereeLastName rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;
                      rdfs:domain foot:RefereeIdentity ;
-                     rdfs:range rdfs:Literal ;
+                     rdfs:range xsd:string ;
                      rdfs:label "refereeLastName" .
 
 
@@ -552,14 +575,14 @@ foot:refereeLastName rdf:type owl:DatatypeProperty ,
 foot:stadiumName rdf:type owl:DatatypeProperty ,
                           owl:FunctionalProperty ;
                  rdfs:domain foot:SportsFacility ;
-                 rdfs:range rdfs:Literal ;
+                 rdfs:range xsd:string ;
                  rdfs:label "stadiumName" .
 
 
 ###  http://www.example.org/foot-infos/ont#teamFairPlayerDate
 foot:teamFairPlayerDate rdf:type owl:DatatypeProperty ;
                         rdfs:domain foot:TeamFairPlayIndex ;
-                        rdfs:range rdfs:Literal ;
+                        rdfs:range xsd:date ;
                         rdfs:label "teamFairPlayerDate" .
 
 
@@ -567,7 +590,7 @@ foot:teamFairPlayerDate rdf:type owl:DatatypeProperty ;
 foot:teamGenre rdf:type owl:DatatypeProperty ,
                         owl:FunctionalProperty ;
                rdfs:domain foot:Team ;
-               rdfs:range rdfs:Literal ;
+               rdfs:range xsd:boolean ;
                rdfs:label "teamGenre" .
 
 
@@ -575,28 +598,28 @@ foot:teamGenre rdf:type owl:DatatypeProperty ,
 foot:teamName rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:domain foot:Team ;
-              rdfs:range rdfs:Literal ;
+              rdfs:range xsd:string ;
               rdfs:label "teamName" .
 
 
 ###  http://www.example.org/foot-infos/ont#teamPenaltyDate
 foot:teamPenaltyDate rdf:type owl:DatatypeProperty ;
                      rdfs:domain foot:TeamPenalties ;
-                     rdfs:range rdfs:Literal ;
+                     rdfs:range xsd:date ;
                      rdfs:label "teamPenaltyDate" .
 
 
 ###  http://www.example.org/foot-infos/ont#teamRedCardNumber
 foot:teamRedCardNumber rdf:type owl:DatatypeProperty ;
                        rdfs:domain foot:TeamPenalties ;
-                       rdfs:range rdfs:Literal ;
+                       rdfs:range xsd:integer ;
                        rdfs:label "teamRedCardNumber" .
 
 
 ###  http://www.example.org/foot-infos/ont#teamYellowCardNumber
 foot:teamYellowCardNumber rdf:type owl:DatatypeProperty ;
                           rdfs:domain foot:TeamPenalties ;
-                          rdfs:range rdfs:Literal ;
+                          rdfs:range xsd:integer ;
                           rdfs:label "teamYellowCardNumber" .
 
 
@@ -817,127 +840,81 @@ foot:TeamPenalties rdf:type owl:Class ;
 #    Rules
 #################################################################
 
-<http://www.foot.org/ontology#c> rdf:type swrl:Variable .
+foot:m1 rdf:type swrl:Variable .
 
-<http://www.foot.org/ontology#q> rdf:type swrl:Variable .
+foot:t rdf:type swrl:Variable .
 
-<http://www.foot.org/ontology#p> rdf:type swrl:Variable .
+foot:m2 rdf:type swrl:Variable .
 
-<http://www.foot.org/ontology#m> rdf:type swrl:Variable .
+foot:p1 rdf:type swrl:Variable .
 
-<http://www.foot.org/ontology#t> rdf:type swrl:Variable .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "InferringManagerQualificationZone" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate foot:isIncludedIn ;
-                           swrl:argument1 <http://www.foot.org/ontology#c> ;
-                           swrl:argument2 <http://www.foot.org/ontology#q>
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate foot:managerComesFrom ;
-                                      swrl:argument1 <http://www.foot.org/ontology#p> ;
-                                      swrl:argument2 <http://www.foot.org/ontology#c>
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate foot:managerAttendsIn ;
-                           swrl:argument1 <http://www.foot.org/ontology#p> ;
-                           swrl:argument2 <http://www.foot.org/ontology#q>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
+foot:p2 rdf:type swrl:Variable .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "" ;
-   rdfs:label "InferringPlayerQualificationZone" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate foot:isIncludedIn ;
-                           swrl:argument1 <http://www.foot.org/ontology#c> ;
-                           swrl:argument2 <http://www.foot.org/ontology#q>
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate foot:playerComesFrom ;
-                                      swrl:argument1 <http://www.foot.org/ontology#p> ;
-                                      swrl:argument2 <http://www.foot.org/ontology#c>
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate foot:playerAttendsIn ;
-                           swrl:argument1 <http://www.foot.org/ontology#p> ;
-                           swrl:argument2 <http://www.foot.org/ontology#q>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "InferringRefereeQualificationZone" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate foot:isIncludedIn ;
-                           swrl:argument1 <http://www.foot.org/ontology#c> ;
-                           swrl:argument2 <http://www.foot.org/ontology#q>
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate foot:refereeComesFrom ;
-                                      swrl:argument1 <http://www.foot.org/ontology#p> ;
-                                      swrl:argument2 <http://www.foot.org/ontology#c>
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate foot:refereeAttendsIn ;
-                           swrl:argument1 <http://www.foot.org/ontology#p> ;
-                           swrl:argument2 <http://www.foot.org/ontology#q>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "InferringPlayerManager" ;
+   rdfs:label "InferringTeamManager" ;
    rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate foot:manages ;
-                           swrl:argument1 <http://www.foot.org/ontology#m> ;
-                           swrl:argument2 <http://www.foot.org/ontology#t>
+                           swrl:argument1 foot:m1 ;
+                           swrl:argument2 foot:t
                          ] ;
                rdf:rest [ rdf:type swrl:AtomList ;
                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate foot:playsFor ;
-                                      swrl:argument1 <http://www.foot.org/ontology#p> ;
-                                      swrl:argument2 <http://www.foot.org/ontology#t>
+                                      swrl:propertyPredicate foot:manages ;
+                                      swrl:argument1 foot:m2 ;
+                                      swrl:argument2 foot:t
                                     ] ;
-                          rdf:rest rdf:nil
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                 swrl:argument1 foot:m1 ;
+                                                 swrl:argument2 foot:m2
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
                         ]
              ] ;
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate foot:coaches ;
-                           swrl:argument1 <http://www.foot.org/ontology#m> ;
-                           swrl:argument2 <http://www.foot.org/ontology#p>
+                           swrl:propertyPredicate foot:hasManagedSameTeam ;
+                           swrl:argument1 foot:m1 ;
+                           swrl:argument2 foot:m2
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "InferringPlayerTeam" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate foot:playsFor ;
+                           swrl:argument1 foot:p1 ;
+                           swrl:argument2 foot:t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate foot:playsFor ;
+                                      swrl:argument1 foot:p2 ;
+                                      swrl:argument2 foot:t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                 swrl:argument1 foot:p1 ;
+                                                 swrl:argument2 foot:p2
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate foot:hasPlayedForSameTeam ;
+                           swrl:argument1 foot:p1 ;
+                           swrl:argument2 foot:p2
                          ] ;
                rdf:rest rdf:nil
              ]
